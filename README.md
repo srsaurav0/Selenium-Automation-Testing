@@ -27,6 +27,7 @@ This project automates testing of a vacation rental website's details page for S
 3.  **Image Alt Attribute Test:** Ensures all images on the page have valid alt attributes.
 4.  **404 Test:** Validates all links on the page, ensuring none return 404 or other unexpected errors.
 5.  **Currency Filtering Test:** Verifies the functionality of currency selection and ensures price elements update correctly.
+5.  **Script Data Scraping:** Scrapes data from by analyzing the scripts in the webpage.
 
 
 ---
