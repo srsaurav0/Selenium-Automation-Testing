@@ -7,8 +7,6 @@
 -   [Installation](#installation)
 -   [Usage](#usage)
 -   [Test Results](#test-results)
--   [Testing](#testing)
--   [Partitioning](#testing)
 
 
 ---
@@ -71,11 +69,13 @@ This project automates testing of a vacation rental website's details page for S
 ## Installation
 
 ### Prerequisites
+
 -   Python (>= 3.8)
 -   Google Chrome or Firefox (Chrome recommended)
 -   ChromeDriver or GeckoDriver (ChromeDriver recommended)
 
 ### Steps
+
 1.  Clone the repository:
     ```bash
         git clone https://github.com/srsaurav0/Selenium-Automation-Testing-Assignment.git
@@ -114,12 +114,14 @@ This project automates testing of a vacation rental website's details page for S
 ## Usage
 
 ### Run All Tests
+
 To run all tests, execute the app.py file:
     ```bash
         python app.py
     ```
 
 ### Run Individual Tests
+
 Run each test separately using the following commands:
 -   **H1 Tag Test:**
     ```bash
@@ -153,6 +155,7 @@ Run each test separately using the following commands:
 ##  Test Results
 
 ### Output
+
 -   All test results are saved in the *output/* directory as **Excel** files with *.xlsx* extension.
 -   Each test (except `test_script_data_scrape.py`) writes its results to a separate sheet in the same Excel file (`test_results.xlsx`).
 -   The test `test_script_data_scrape.py` writes its output in `script_data.xlsx` file because of its different output structure.
