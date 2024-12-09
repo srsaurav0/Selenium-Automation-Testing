@@ -1,0 +1,35 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs and debug files
+*.log
+*.out
+
+# OS-specific files
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Environment variables
+.env
+
+# Test output
+output/*
+
+# Driver executables (if stored locally)
+drivers/*
+
+# Excel and generated files (optional)
+*.xlsx
