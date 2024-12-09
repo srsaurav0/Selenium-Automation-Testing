@@ -36,33 +36,33 @@ This project automates testing of a vacation rental website's details page for S
 
 ## Project Structure
 
-```bash
-    VacationRentalAutomation/
-    │
-    ├── output/                             # Directory for storing test results (Excel files)
-    │
-    ├── drivers/                            # Directory for drivers (chromedriver)
-    │
-    ├── tests/                              # Directory containing test scripts
-    │   ├── test_h1_tag.py                  # H1 tag validation script
-    │   ├── test_html_sequence.py           # HTML sequence validation script
-    │   ├── test_image_alt.py               # Image alt attribute validation script
-    │   ├── test_404.py                     # 404 error validation script
-    │   ├── test_currency_filtering.py      # Currency filtering test script
-    │   ├── test_script_data_scrape.py      # Script data scraping test
-    │   └── __init__.py                     # Test package initialization
-    │
-    ├── utils/                              # Utility scripts
-    │   ├── browser.py                      # Browser setup utility
-    │   ├── config.py                       # Configuration file for constants (e.g., BASE_URL, WAIT_TIME)
-    │   ├── reporter.py                     # Handles Excel report generation
-    │   └── __init__.py                     # Utility package initialization
-    │
-    ├── app.py                              # Main file to execute all test scripts
-    ├── requirements.txt                    # Python dependencies for the project
-    ├── .gitignore                          # Environment variables (optional)
-    └── README.md                           # Project documentation
-```
+    ```bash
+        VacationRentalAutomation/
+        │
+        ├── output/                             # Directory for storing test results (Excel files)
+        │
+        ├── drivers/                            # Directory for drivers (chromedriver)
+        │
+        ├── tests/                              # Directory containing test scripts
+        │   ├── test_h1_tag.py                  # H1 tag validation script
+        │   ├── test_html_sequence.py           # HTML sequence validation script
+        │   ├── test_image_alt.py               # Image alt attribute validation script
+        │   ├── test_404.py                     # 404 error validation script
+        │   ├── test_currency_filtering.py      # Currency filtering test script
+        │   ├── test_script_data_scrape.py      # Script data scraping test
+        │   └── __init__.py                     # Test package initialization
+        │
+        ├── utils/                              # Utility scripts
+        │   ├── browser.py                      # Browser setup utility
+        │   ├── config.py                       # Configuration file for constants (e.g., BASE_URL, WAIT_TIME)
+        │   ├── reporter.py                     # Handles Excel report generation
+        │   └── __init__.py                     # Utility package initialization
+        │
+        ├── app.py                              # Main file to execute all test scripts
+        ├── requirements.txt                    # Python dependencies for the project
+        ├── .gitignore                          # Environment variables (optional)
+        └── README.md                           # Project documentation
+    ```
 
 
 ---
