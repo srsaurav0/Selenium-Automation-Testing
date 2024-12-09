@@ -78,8 +78,8 @@ This project automates testing of a vacation rental website's details page for S
 
 1.  Clone the repository:
     ```bash
-        git clone https://github.com/srsaurav0/Selenium-Automation-Testing-Assignment.git
-        cd Selenium-Automation-Testing-Assignment
+    git clone https://github.com/srsaurav0/Selenium-Automation-Testing-Assignment.git
+    cd Selenium-Automation-Testing-Assignment
     ```
 2.  Create and activate a virtual environment:
     On Linux:
