@@ -26,7 +26,7 @@ def get_all_links(driver):
     valid_links = set()
     for link in links:
         href = link.get_attribute("href")
-        if href and "facebook.com" not in href:
+        if href and "facebook.com" and "x.com" not in href:
             valid_links.add(href)
     return valid_links
 
