@@ -1,4 +1,4 @@
-#   Vacation Rental Home Page Automation Testing Assignment
+#   Selenium Web Automation Testing Assignment
 
 ##  Table of Contents
 -   [Project Overview](#project-overview)
