@@ -34,7 +34,7 @@ This project automates testing of a vacation rental website's details page for S
 
 ## Project Structure
 
-    ```css
+    ```bash
         VacationRentalAutomation/
         │
         ├── output/                             # Directory for storing test results (Excel files)
@@ -84,14 +84,14 @@ This project automates testing of a vacation rental website's details page for S
 2.  Create and activate a virtual environment:
     On Linux:
     ```bash
-        python3 -m venv .venv
-        source .venv/bin/activate
+    python3 -m venv .venv
+    source .venv/bin/activate
     ```
     On Windows:
     ```bash
-        python -m venv .venv
-        Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-        .venv\Scripts\activate
+    python -m venv .venv
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    .venv\Scripts\activate
     ```
 3.  Setup ChromeDriver:
     -   Create (if not exists) a folder named *drivers* at the root of the project.
@@ -102,7 +102,7 @@ This project automates testing of a vacation rental website's details page for S
     -   Now copy the `chromedriver` file inside the *drivers* folder.
 4.  Install Dependencies:
     ```bash
-        pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 5.  Update Configuration:
     -   Edit utils/config.py to set the BASE_URL, WAIT_TIME, and other constants as per your requirements.
@@ -117,7 +117,7 @@ This project automates testing of a vacation rental website's details page for S
 
 To run all tests, execute the app.py file:
     ```bash
-        python app.py
+    python app.py
     ```
 
 ### Run Individual Tests
@@ -125,27 +125,27 @@ To run all tests, execute the app.py file:
 Run each test separately using the following commands:
 -   **H1 Tag Test:**
     ```bash
-        python -m tests.test_h1_tag
+    python -m tests.test_h1_tag
     ```
 -   **HTML Sequence Test:**
     ```bash
-        python -m tests.test_html_sequence
+    python -m tests.test_html_sequence
     ```
 -   **Image Alt Attribute Test:**
     ```bash
-        python -m tests.test_image_alt
+    python -m tests.test_image_alt
     ```
 -   **URL Status Code Test of URLs:**
     ```bash
-        python -m tests.test_404
+    python -m tests.test_404
     ```
 -   **Currency Filtering Test:**
     ```bash
-        python -m tests.test_currency_filtering
+    python -m tests.test_currency_filtering
     ```
 -   **Script Data Scrape:**
     ```bash
-        python -m tests.test_script_data_scrape
+    python -m tests.test_script_data_scrape
     ```
 
 
