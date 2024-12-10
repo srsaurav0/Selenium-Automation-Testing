@@ -127,9 +127,9 @@ python app.py
 
 Run each test separately using the following commands:
 -   **H1 Tag Test:**
-```bash
-python -m tests.test_h1_tag
-```
+    ```bash
+    python -m tests.test_h1_tag
+    ```
 -   **HTML Sequence Test:**
     ```bash
     python -m tests.test_html_sequence
@@ -164,7 +164,7 @@ python -m tests.test_h1_tag
 -   The test `test_script_data_scrape.py` writes its output in `script_data.xlsx` file because of its different output structure.
 -   The test results are appended automatically in the Excel sheet.
 -   To view the output .xlsx files in VS Code, **Excel Viewer** extension is recommended.
--   To change the test webpage, simply change the ***BASE_URL*** in the ***utils/config.py*** file.
+-   To change the test webpage, simply change the `BASE_URL` in the ***utils/config.py*** file.
 
 ### Report Structure
 
@@ -197,16 +197,19 @@ Code is divided into smaller modules (`utils/` and `tests/`) based on their resp
 -   **Browser Setup (`utils/browser.py`)**: Encapsulates the WebDriver setup, making it reusable across all test scripts.
 -   **Reporting (`utils/reporter.py`)**: Handles Excel report generation in a reusable way.
 -   **Configuration (`utils/config.py`)**: Centralized configuration management makes code adaptable for other test cases or environments.
+
 **Advantage**: Modules can be reused independently in new projects or extended without affecting unrelated code.
 
 ### Parameterized Configurations
 
 Parameters like `BASE_URL`, `WAIT_TIME`, and other constants are managed in `utils/config.py`.
+
 **Advantage**: The tests can be reused for other URLs or websites by simply updating the `BASE_URL` or `CURRENCY_MAP`. This avoids hardcoding and enhances flexibility.
 
 ### Generic Utility Functions
 
 Utility functions like `get_driver()` and `save_report()` are decoupled from specific test logic.
+
 **Advantage**: These functions can be used in other Selenium projects. For example:
 -   `get_driver()`: Reusable across any Selenium-based test automation.
 -   `save_report()`: Can be used to generate Excel reports in any data-driven testing scenario.
