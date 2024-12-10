@@ -8,7 +8,6 @@ from utils.reporter import initialize_report, save_report
 from utils.config import BASE_URL, WAIT_TIME
 
 
-
 def check_h1_tag(driver):
     """Check for H1 tag on the given page and ensure only one exists."""
     try:
@@ -40,7 +39,7 @@ def test_h1_tag():
         print(f"Testing H1 tag on: {BASE_URL}")
         status, comments = check_h1_tag(driver)
 
-        # Add result for the current page
+        # Add result to the excel file for the current page
         new_row = pd.DataFrame(
             [
                 {

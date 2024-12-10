@@ -81,8 +81,8 @@ This project automates testing of a vacation rental website's details page for S
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/srsaurav0/Selenium-Automation-Testing-Assignment.git
-    cd Selenium-Automation-Testing-Assignment
+    git clone https://github.com/srsaurav0/Selenium-Automation-Testing.git
+    cd Selenium-Automation-Testing
     ```
 2.  Create and activate a virtual environment:
     On Linux:
@@ -109,6 +109,8 @@ This project automates testing of a vacation rental website's details page for S
     ```
 5.  Update Configuration:
     -   Edit ***utils/config.py*** to set the `BASE_URL`, `WAIT_TIME`, and other constants as per your requirements.
+6.  Setup Output Folder:
+    -   Create an output folder named ***output*** at the root of the project.
 
 
 ---

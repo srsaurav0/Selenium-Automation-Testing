@@ -41,11 +41,11 @@ def validate_url_status(url):
         else:
             # Fetch description or provide a generic message
             description = HTTP_STATUS_DESCRIPTIONS.get(
-                status_code, f"Unexpected status code: {status_code}\n"
+                status_code, f"Unexpected status code: {status_code}"
             )
-            return False, f"{url} ({status_code}: {description})\n"
+            return False, f"{url} ({status_code}: {description})"
     except RequestException as e:
-        return False, f"{url} (Request error: {str(e)}).\n"
+        return False, f"{url} (Request error: {str(e)})."
 
 
 def test_404():
@@ -59,7 +59,7 @@ def test_404():
         links = get_all_links(driver)
 
         for link in links:
-            print(f"Checking link: {link}")
+            # print(f"Checking link: {link}")
             success, error_message = validate_url_status(link)
             if not success:
                 failed_links.append(error_message)
@@ -70,7 +70,7 @@ def test_404():
     # Determine overall test status and comments
     if failed_links:
         status = "Fail"
-        comments = f"Failed links: {', '.join(failed_links)}"
+        comments = f"Failed links: {', \n'.join(failed_links)}"
     else:
         status = "Pass"
         comments = "All links are accessible."
