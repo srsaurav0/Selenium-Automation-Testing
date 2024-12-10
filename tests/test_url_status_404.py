@@ -7,9 +7,12 @@ from utils.reporter import save_report
 from utils.config import BASE_URL, WAIT_TIME
 
 
-# Dictionary of common HTTP status codes and their meanings (focus on 404)
+# Dictionary of common HTTP status codes and their meanings
 HTTP_STATUS_DESCRIPTIONS = {
     404: "Not Found: The requested resource was not found.",
+    400: "Bad Request: The server could not understand the request.",
+    500: "Internal Server Error: The server encountered an error.",
+    503: "Service Unavailable: The server is temporarily unable to handle the request.",
 }
 
 
@@ -24,28 +27,25 @@ def get_all_links(driver):
     return valid_links
 
 
-def validate_url_status_for_404(url):
-    """Check if the URL returns a 404 error."""
+def validate_url_status(url):
+    """Validate the status code of a URL for 404 and broken links."""
     try:
         response = requests.head(url, allow_redirects=True, timeout=5)
         status_code = response.status_code
         if status_code == 404:
-            # Fetch description for 404 error
-            description = HTTP_STATUS_DESCRIPTIONS.get(
-                status_code, f"Unexpected status code: {status_code}"
-            )
-            return False, f"{url} ({status_code}: {description})"
+            return False, f"{url} (404: {HTTP_STATUS_DESCRIPTIONS[404]})"
+        elif status_code in HTTP_STATUS_DESCRIPTIONS:
+            return False, f"{url} ({status_code}: {HTTP_STATUS_DESCRIPTIONS[status_code]})"
         else:
-            return True, None  # Pass, no error message
+            return True, None  # Pass if status code is not 404 or broken
     except RequestException as e:
-        # Ignore other HTTP request errors and treat them as pass
-        return True, None
+        return False, f"{url} (Request error: {str(e)})."
 
 
 def test_404():
-    """Test for 404 errors on all links of the specified page."""
+    """Test for 404 errors and broken links on all links of the specified page."""
     driver = get_driver()
-    failed_links = []  # Collect failed links with 404 errors
+    failed_links = []  # Collect failed links for comments
 
     try:
         print(f"Fetching links from: {BASE_URL}")
@@ -53,8 +53,7 @@ def test_404():
         links = get_all_links(driver)
 
         for link in links:
-            # Check only for 404 errors
-            success, error_message = validate_url_status_for_404(link)
+            success, error_message = validate_url_status(link)
             if not success:
                 failed_links.append(error_message)
 
@@ -64,10 +63,10 @@ def test_404():
     # Determine overall test status and comments
     if failed_links:
         status = "Fail"
-        comments = f"Failed links: {', \n'.join(failed_links)}"
+        comments = f"Broken or 404 links: {', \n'.join(failed_links)}"
     else:
         status = "Pass"
-        comments = "No 404 errors found. All links are valid."
+        comments = "All links are accessible, no 404 errors found."
 
     # Create a single-row result
     result = [
