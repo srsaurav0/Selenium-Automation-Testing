@@ -53,6 +53,7 @@ def test_404():
         links = get_all_links(driver)
 
         for link in links:
+            # print(f"Checking link: {link}")
             success, error_message = validate_url_status(link)
             if not success:
                 failed_links.append(error_message)
