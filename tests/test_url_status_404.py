@@ -26,7 +26,7 @@ def get_all_links(driver):
     valid_links = set()
     for link in links:
         href = link.get_attribute("href")
-        if href and "facebook.com" and "x.com" not in href:
+        if href:
             valid_links.add(href)
     return valid_links
 
@@ -41,11 +41,11 @@ def validate_url_status(url):
         else:
             # Fetch description or provide a generic message
             description = HTTP_STATUS_DESCRIPTIONS.get(
-                status_code, f"Unexpected status code: {status_code}"
+                status_code, f"Unexpected status code: {status_code}\n"
             )
-            return False, f"{url} ({status_code}: {description})"
+            return False, f"{url} ({status_code}: {description})\n"
     except RequestException as e:
-        return False, f"{url} (Request error: {str(e)})."
+        return False, f"{url} (Request error: {str(e)}).\n"
 
 
 def test_404():
