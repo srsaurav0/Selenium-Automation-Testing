@@ -127,9 +127,9 @@ python app.py
 
 Run each test separately using the following commands:
 -   **H1 Tag Test:**
-    ```bash
-    python -m tests.test_h1_tag
-    ```
+```bash
+python -m tests.test_h1_tag
+```
 -   **HTML Sequence Test:**
     ```bash
     python -m tests.test_html_sequence
