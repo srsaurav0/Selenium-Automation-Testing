@@ -162,8 +162,7 @@ Run each test separately using the following commands:
 ### Output
 
 -   All test results are saved in the ***output/*** directory as **Excel** files with ***.xlsx*** extension.
--   Each test (except `test_script_data_scrape.py`) writes its results to a separate sheet in the same Excel file (`test_results.xlsx`).
--   The test `test_script_data_scrape.py` writes its output in `script_data.xlsx` file because of its different output structure.
+-   Each test writes its results to a separate sheet in the same Excel file (`test_results.xlsx`).
 -   The test results are appended automatically in the Excel sheet.
 -   To view the output .xlsx files in VS Code, **Excel Viewer** extension is recommended.
 -   To change the test webpage, simply change the `BASE_URL` in the ***utils/config.py*** file.
