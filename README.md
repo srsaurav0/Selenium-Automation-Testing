@@ -119,6 +119,7 @@ This project automates testing of a vacation rental website's details page for S
 ### Run All Tests
 
 To run all tests, execute the app.py file:
+
     ```bash
     python app.py
     ```
