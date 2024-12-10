@@ -144,12 +144,12 @@ Run each test separately using the following commands:
     ```bash
     python -m tests.test_404
     ```
--   To see all the links being checked, uncomment line 56 (`print(f"Checking link: {link}")`)
+    -   To see all the links being checked, uncomment line 56 (`print(f"Checking link: {link}")`)
 -   **Currency Filtering Test:**
     ```bash
     python -m tests.test_currency_filtering
     ```
--   To see the changed currencies, uncomment line 60 (`print(price_text)`)
+    -   To see the changed currencies, uncomment line 60 (`print(price_text)`)
 
 -   **Script Data Scrape:**
     ```bash
