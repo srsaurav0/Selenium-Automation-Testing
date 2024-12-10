@@ -57,7 +57,7 @@ def change_currency_and_verify_all(driver, country_code, currency_symbol):
         price_elements = driver.find_elements(By.CLASS_NAME, "js-price-value")
         for element in price_elements:
             price_text = element.text
-            print(price_elements, price_text)
+            print(price_text)
             if currency_symbol not in price_text:
                 errors.append(f"Currency mismatch in element: {price_text}")
 

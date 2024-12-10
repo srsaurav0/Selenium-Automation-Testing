@@ -4,7 +4,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils.browser import get_driver
-from utils.reporter import initialize_report, save_report
+from utils.reporter import save_report
 from utils.config import BASE_URL, WAIT_TIME
 
 
