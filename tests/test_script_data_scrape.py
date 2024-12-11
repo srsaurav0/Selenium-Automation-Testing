@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import re
 import json
@@ -68,24 +69,33 @@ def extract_script_data(driver):
 
 def save_data_to_report(data, file_path, sheet_name):
     """
-    Append data to an existing Excel file or create a new sheet.
+    Append data to an existing sheet in an Excel file, or create a new sheet if it doesn't exist.
     
     Args:
         data (list): Data to be saved.
         file_path (str): Path to the Excel file.
         sheet_name (str): Name of the sheet to save the data.
     """
-    df = pd.DataFrame(data)
+    new_df = pd.DataFrame(data)
 
     try:
-        with pd.ExcelWriter(file_path, engine="openpyxl", mode="a", if_sheet_exists="new") as writer:
-            df.to_excel(writer, index=False, sheet_name=sheet_name)
+        # Check if the file exists
+        if os.path.exists(file_path):
+            # Read the existing Excel file
+            with pd.ExcelWriter(file_path, engine="openpyxl", mode="a", if_sheet_exists="overlay") as writer:
+                # Check if the sheet already exists
+                existing_data = pd.read_excel(file_path, sheet_name=sheet_name)
+                # Combine existing data with new data
+                combined_df = pd.concat([existing_data, new_df], ignore_index=True)
+                # Write the combined data back to the sheet
+                combined_df.to_excel(writer, index=False, sheet_name=sheet_name)
+        else:
+            # If the file doesn't exist, create it and write the data
+            with pd.ExcelWriter(file_path, engine="openpyxl") as writer:
+                new_df.to_excel(writer, index=False, sheet_name=sheet_name)
         print(f"Data appended to {file_path} in sheet '{sheet_name}'.")
-    except FileNotFoundError:
-        print(f"File {file_path} not found. Creating a new one.")
-        with pd.ExcelWriter(file_path, engine="openpyxl") as writer:
-            df.to_excel(writer, index=False, sheet_name=sheet_name)
-        print(f"File created with data in sheet '{sheet_name}'.")
+    except Exception as e:
+        print(f"Error while saving data: {str(e)}")
 
 
 def scrape_script_data():
