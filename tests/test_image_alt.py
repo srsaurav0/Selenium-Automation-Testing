@@ -42,7 +42,7 @@ def validate_image_alt_attributes(driver):
     if not missing_alt_images:
         return {
             "Test Case": "Image Alt Attribute Test",
-            "Status": "Pass",
+            "Status": "Passed",
             "Page URL": BASE_URL,
             "Comments": "All images have alt attributes.",
         }

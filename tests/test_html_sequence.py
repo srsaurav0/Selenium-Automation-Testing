@@ -27,7 +27,7 @@ def validate_header_sequence(driver):
 
         # Validate sequence
         if header_levels == sorted(header_levels) and not missing_tags:
-            return "Pass", "Header tags are in correct sequence with no missing tags."
+            return "Passed", "Header tags are in correct sequence with no missing tags."
         else:
             reason = []
             if header_levels != sorted(header_levels):

@@ -98,7 +98,7 @@ def test_currency_filtering():
         status = "Fail"
         comments = f"Failed currencies: {', '.join(failed_currencies)}"
     else:
-        status = "Pass"
+        status = "Passed"
         comments = "All currencies updated successfully for all price elements."
 
     # Create a single-row result

@@ -66,7 +66,7 @@ def test_404():
         status = "Fail"
         comments = f"Broken or 404 links: {', \n'.join(failed_links)}"
     else:
-        status = "Pass"
+        status = "Passed"
         comments = "All links are accessible, no 404 errors found."
 
     # Create a single-row result
