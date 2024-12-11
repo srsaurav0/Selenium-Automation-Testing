@@ -96,21 +96,23 @@ This project automates testing of a vacation rental website's details page for S
     Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
     .venv\Scripts\activate
     ```
-3.  Setup ChromeDriver:
-    -   Create (if not exists) a folder named ***drivers*** at the root of the project.
+3.  Setup Structure:
+    -   Create two folders named ***drivers*** and ***output*** at the root of the project.
+    ```bash
+    mkdir drivers output
+    ```
+4.  Setup ChromeDriver:
     -   Download ChromeDriver from website:
         -   For Linux: *https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.87/linux64/chromedriver-linux64.zip*
         -   For Win32: *https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.87/win32/chromedriver-win32.zip*
         -   For Win64: *https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.87/win64/chromedriver-win64.zip*
     -   Now copy the `chromedriver` file inside the ***drivers*** folder.
-4.  Install Dependencies:
+5.  Install Dependencies:
     ```bash
     pip install -r requirements.txt
     ```
-5.  Update Configuration:
+6.  Update Configuration:
     -   Edit ***utils/config.py*** to set the `BASE_URL`, `WAIT_TIME`, and other constants as per your requirements.
-6.  Setup Output Folder:
-    -   Create an output folder named ***output*** at the root of the project.
 
 
 ---
